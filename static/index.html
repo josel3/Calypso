@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="styles/generics.css">
+    <title>Home</title>
+    <style>
+        section{
+            height:50%;
+            width:100%;
+            display: flex;
+        }
+        p{
+            margin: auto;
+        }
+        form{
+            display: flex;
+            margin: auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <section style="border-bottom: 2px solid black; background-color: tomato;">
+        <form action="/search" method="post">
+            <div class="centered" style="display: flex">
+                <input class="input" type="text" name="q" id="search">
+                <button class="button is-info">Q</button>    
+            </div>
+        </form>
+    </section>
+    <section>
+        <form action="/search" method="post">
+            <input type="text" name="q" style="display: none;">
+            <button class="button is-success">browse all</button>
+        </form>
+    </section>
+</body>
+</html>

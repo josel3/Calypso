@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bulma.css" type="text/css">
+    <link rel="stylesheet" href="/styles/generics.css" type="text/css">
+    <style>
+        .panel {
+            height: 100%;
+            overflow: auto;
+        }
+        img {
+            width: 100%;
+        }
+        
+        @media (orientation: landscape) {
+            .columns{
+                height: 100%;
+            }
+            .column{
+                height: 100%;
+            }
+        }
+        @media (orientation: portrait){
+            body {
+                overflow-y: auto;
+            }
+        }
+
+    </style>
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="columns is-vcentered">
+        <div class="column is-one-quarter">
+                <img src="{{portrait}}">
+        </div>
+        <div class="column">
+            <nav class="panel is-dark">
+                <p class="panel-heading">Capitulos</p>
+                {{#chapters}}
+                    <a class="panel-block is-small" onclick="window.location='{{url}}'">
+                        <span class="panel-icon">
+                            <img  src="{{img}}">
+                        </span>
+                        <p class="has-text-light">
+                            {{title}} {{id}}
+                        </p>
+                    </a>
+                {{/chapters}}
+                {{^chapters}}
+                    <a class="panel-block is-danger">No se encontraron elementos</a>
+                {{/chapters}}
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

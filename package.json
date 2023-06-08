@@ -1,0 +1,23 @@
+{
+  "name": "calipso",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "node-sass --omit-source-map-url sass/bulma.scss css/bulma.css",
+    "start": "npm run css-build && nodemon -V ./server.js"
+  },
+  "author": "José Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mustache": "^4.2.0",
+    "node-ls": "^0.0.4"
+  },
+  "devDependencies": {
+    "bulma": "^0.9.4",
+    "node-sass": "^8.0.0"
+  }
+}

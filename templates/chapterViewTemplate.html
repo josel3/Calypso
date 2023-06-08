@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bulma.css" type="text/css">
+    <link rel="stylesheet" href="/styles/generics.css" type="text/css">
+    <title>{{title}} {{number}}</title>
+    <style>
+        .video {
+            margin-left: auto;
+            margin-right: auto;
+            overflow: auto;
+        }
+
+        .video-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .controls-container {
+            flex: 0 0 auto;
+            display: flex;
+            margin: 3px;
+            overflow: auto;
+        }
+
+        .control-left {
+            margin-right: auto;
+        }
+
+        .control-right {
+            margin-left: auto;
+        }
+
+        .control-center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-container">
+        <video class="video" controls="controls" src="{{video}}"></video>
+        <div class="controls-container">
+            {{#prev}}<a class="control-left" href="{{prev}}"><button class="button is-dark">&lt=</button></a>{{/prev}}
+            <a class="control-center" href="{{chapterList}}"><button class="button is-dark">#</button></a>
+            {{#next}}<a class="control-right" href="{{next}}"><button class="button is-dark">=&gt</button></a>{{/next}}
+        </div>
+    </div>
+</body>
+
+</html>

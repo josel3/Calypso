@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="styls/generics.css">
+    <style>
+        .grid {
+            padding: 10px;
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fill, minmax(min(100%, 11rem), 3fr));
+            grid-auto-rows: 15em;
+            gap: 1em;
+        }
+
+        .item {
+            cursor: pointer;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        .img {
+            display: flex;
+            border-radius: inherit;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .img>p{
+            width: 100%;
+            background-color: rgba(0, 0, 0,.8);
+            text-align: center;
+            align-self: end;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class="panel-heading is-dark">
+        Resultado de la busqueda:
+    </p>
+    <div class="hero grid is-dark">
+        {{#bookList}}
+        <div onclick="window.location.href='/chapterList{{path}}'" class="item is-dark">
+            <span style="background-image: url({{image}});" class="img">
+                <p>
+                    {{title}}
+
+                </p>
+            </span>
+        </div>
+        {{/bookList}}
+        {{^bookList}}
+        <div class='panel-block is-danger'>
+            no hay resultados que coincidan con la busqueda
+        </div>
+        {{/bookList}}
+        </div>
+        </section>
+        {{^bookList}}
+        <div class="container columns is-centered">
+            <div class="column is-half">
+                <form action="/search" method="post" enctype="application/x-www-form-urlencoded">
+                    <div class="centered" style="display: flex">
+                        <input class="input" type="text" name="q" id="search">
+                        <button class="button is-info">Q</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {{/bookList}}
+</body>
+
+</html>
