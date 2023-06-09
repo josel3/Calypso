@@ -3,7 +3,7 @@ sitio web estatico para reproducir video basado en node.js y mustache, su princi
 androidbox viejas que ya no pueden actualizar sus navegadores y tienen problemas para instalar apps de este estilo.
 
 hacerlo funcionar deberia ser tan simple como clonar el repositorio, crear carpetas con el nombre de la serie o pelicula
-en la carpeta ==library==, abrir una terminal en el directorio raiz y ejecutar
+en la carpeta `library`, abrir una terminal en el directorio raiz y ejecutar
 los siguientes comandos:
 ```
 npm install
