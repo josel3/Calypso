@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express');
 const routes = require('./routes.js')
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 const library = process.env.LIBRARY || __dirname + '/library'
 
 app.use(express.urlencoded({ extended: true }));
